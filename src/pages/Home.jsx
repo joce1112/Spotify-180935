@@ -1,11 +1,20 @@
 import {Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-import React, {  useState } from "react";
-import { spotifySearch } from "../api/spotify";
+import React, {  useState, useEffect } from "react";
+import { spotifySearch,getSpotifyToken } from "../api/spotify";
 import { CardTrack } from "../components/Card/Card";
 import CardAlbum from "../components/Card/cardAlbum";
 import CardArtist from "../components/Card/cardArtist";
+import Cookies from "universal-cookie";
 
 export  function Home() {
+    const cookies = new Cookies();
+    const token = cookies.get("token");
+    
+   
+    useEffect(()=>{
+    if(!token)getSpotifyToken();
+  },[token]);
+  
     const [data, setData] = useState([]);
     const [searchQuery, setSearchQuery] = useState({
         type: "Todo",
@@ -63,7 +72,12 @@ export  function Home() {
                  style={{minWidth: 120,height:55,
                     backgroundColor: "#21b6ae",}}
                  variant="contained" 
-                 onClick={search}>
+                 onClick={() => {
+                    
+                     search();
+                     getSpotifyToken();
+                  }}
+                >
                     Buscar
                 </Button>
             </Grid>

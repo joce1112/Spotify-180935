@@ -33,7 +33,7 @@ const AUTH_TOKEN = Buffer(`${CLIENT_ID}:${SECRET_ID}`, "utf-8").toString(
 
 export const spotifySearch = async(type = "artist", query = "The Beatles") => {
     
-    const access_token = getSpotifyToken(); 
+    const access_token = cookies.get("token"); 
     
     if (type === "Todo") {
         type = ["album", "artist", "track"];
