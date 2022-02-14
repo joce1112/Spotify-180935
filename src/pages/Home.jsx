@@ -74,8 +74,9 @@ export  function Home() {
                  variant="contained" 
                  onClick={() => {
                     
-                     search();
+                    
                      getSpotifyToken();
+                     search();
                   }}
                 >
                     Buscar
