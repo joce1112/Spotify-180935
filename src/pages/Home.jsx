@@ -1,5 +1,5 @@
 import {Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { spotifySearch } from "../api/spotify";
 import { CardTrack } from "../components/Card/Card";
 import CardAlbum from "../components/Card/cardAlbum";
@@ -67,9 +67,8 @@ export  function Home() {
                     Buscar
                 </Button>
             </Grid>
-            {/* <Grid item xs={6}>
-               
-            </Grid> */}
+            
+            
             
             <Grid
                 container

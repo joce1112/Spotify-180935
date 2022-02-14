@@ -6,7 +6,6 @@ const cookies = new Cookies();
 
 const CLIENT_ID ='757e7d38e2184cdfbb353853aee73deb'
 const SECRET_ID = "511e823865e64216a27122787bff0423";
-const redirectUri = "http://localhost:3000/";
 
 
 const AUTH_TOKEN = Buffer(`${CLIENT_ID}:${SECRET_ID}`, "utf-8").toString(
